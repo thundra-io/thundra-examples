@@ -1,0 +1,3 @@
+[submodule "javascript/extras"]
+	path = javascript/extras
+	url = git@github.com:thundra-io/thundra-examples-lambda-nodejs.git
