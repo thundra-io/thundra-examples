@@ -1,0 +1,11 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "sam-debugger-example"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1e01km2uzjok3"
+s3_prefix = "sam-debugger-example"
+region = "us-west-2"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+image_repositories = []

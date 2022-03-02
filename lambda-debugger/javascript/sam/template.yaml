@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  sam-example
+
+  Sample SAM Template for sam-example
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 120
+
+Resources:
+  HelloWorldFunctionSAM:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: hello-world/
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Layers:
+        - arn:aws:lambda:us-west-2:269863060030:layer:thundra-lambda-node-layer:107
+      Architectures:
+        - x86_64
+      Environment:
+        Variables:
+          THUNDRA_APIKEY: "<THUNDRA_APIKEY>"
+          # THUNDRA_AGENT_LAMBDA_DEBUG_ENABLE: "true"
+          THUNDRA_AGENT_LAMBDA_DEBUGGER_AUTH_TOKEN: "<THUNDRA_AGENT_LAMBDA_DEBUGGER_AUTH_TOKEN>"
+          THUNDRA_AGENT_LAMBDA_DEBUGGER_ENABLE: "true"
+          NODE_OPTIONS: "-r @thundra/core/dist/bootstrap/lambda"
