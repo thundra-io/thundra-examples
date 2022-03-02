@@ -14,7 +14,7 @@ export class LambdaStack extends cdk.Stack {
 
     const lambdaFunction = new lambda.NodejsFunction(this, 'HelloWorldFunction', {
       // entry: './lib/src/hello-world.ts',
-      functionName: 'HelloWorld-Example',
+      functionName: 'HelloWorld-Example-CDK',
       runtime: Runtime.NODEJS_14_X,
       memorySize: 256,
       timeout: cdk.Duration.seconds(120),
